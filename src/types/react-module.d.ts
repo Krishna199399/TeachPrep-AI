@@ -1,0 +1,46 @@
+declare module 'react-icons/fi' {
+  import { IconType } from 'react-icons';
+  
+  export const FiMenu: IconType;
+  export const FiBell: IconType;
+  export const FiUser: IconType;
+  export const FiX: IconType;
+  export const FiHome: IconType;
+  export const FiCalendar: IconType;
+  export const FiBookOpen: IconType;
+  export const FiFileText: IconType;
+  export const FiUsers: IconType;
+  export const FiSettings: IconType;
+  export const FiEdit2: IconType;
+  export const FiCopy: IconType;
+  export const FiTrash2: IconType;
+  export const FiDownload: IconType;
+  export const FiExternalLink: IconType;
+  export const FiBookmark: IconType;
+  export const FiPlus: IconType;
+  export const FiBook: IconType;
+  export const FiTrendingUp: IconType;
+  export const FiSend: IconType;
+  export const FiCpu: IconType;
+  export const FiSave: IconType;
+  export const FiShare2: IconType;
+  export const FiSearch: IconType;
+  export const FiFilter: IconType;
+  export const FiGrid: IconType;
+  export const FiList: IconType;
+  export const FiClock: IconType;
+  export const FiMessageSquare: IconType;
+  export const FiCheckCircle: IconType;
+  export const FiFile: IconType;
+  export const FiFolder: IconType;
+  export const FiMail: IconType;
+  export const FiLock: IconType;
+  export const FiLogIn: IconType;
+  export const FiUserPlus: IconType;
+  export const FiLogOut: IconType;
+  export const FiClipboard: IconType;
+  export const FiShield: IconType;
+  export const FiStar: IconType;
+  export const FiBarChart2: IconType;
+  export const FiAlertCircle: IconType;
+} 

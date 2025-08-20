@@ -1,0 +1,1174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary: #5E48E8;
+  --primary-dark: #4936C1;
+  --secondary: #38BDF8;
+  --accent: #FB7185;
+  --font-size-base: 1rem;
+}
+
+/* Light theme variables (default) */
+.light-theme, :root {
+  --text-color: #1f2937;
+  --text-color-secondary: #4b5563;
+  --text-color-tertiary: #6b7280;
+  --background-color: #f9fafb;
+  --card-background: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --input-background: #ffffff;
+  --input-text: #374151;
+  --input-placeholder: #9ca3af;
+  --highlight-bg: #f3f4f6;
+  --stat-card-green: rgba(16, 185, 129, 0.15);
+  --stat-card-yellow: rgba(245, 158, 11, 0.15);
+  --stat-card-purple: rgba(124, 58, 237, 0.15);
+  --stat-card-blue: rgba(59, 130, 246, 0.15);
+  --stat-text-green: #065f46;
+  --stat-text-yellow: #92400e;
+  --stat-text-purple: #5b21b6;
+  --stat-text-blue: #1e3a8a;
+}
+
+/* Dark theme variables */
+.dark-theme {
+  --text-color: #ffffff;
+  --text-color-secondary: #e2e8f0;
+  --text-color-tertiary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --background-color: #0f172a;
+  --card-background: #1e293b;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --input-background: #1e293b;
+  --input-text: #e2e8f0;
+  --input-placeholder: #64748b;
+  --highlight-bg: #2d3748;
+  --stat-card-green: rgba(16, 185, 129, 0.25);
+  --stat-card-yellow: rgba(245, 158, 11, 0.25);
+  --stat-card-purple: rgba(124, 58, 237, 0.25);
+  --stat-card-blue: rgba(59, 130, 246, 0.25);
+  --stat-text-green: #34d399;
+  --stat-text-yellow: #fbbf24;
+  --stat-text-purple: #a78bfa;
+  --stat-text-blue: #60a5fa;
+  --button-text: #ffffff;
+  --button-bg-hover: rgba(255, 255, 255, 0.1);
+}
+
+/* Layout preferences */
+.grid-layout .resource-container,
+.grid-layout .lesson-container {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+.list-layout .resource-container,
+.list-layout .lesson-container {
+  @apply flex flex-col gap-2;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Apply theme to common elements */
+.bg-white, 
+.bg-gray-50, 
+.bg-gray-100 {
+  background-color: var(--card-background) !important;
+}
+
+.text-gray-700, .text-gray-900, .text-gray-800 {
+  color: var(--text-color) !important;
+}
+
+.text-gray-500, .text-gray-600 {
+  color: var(--text-color-secondary) !important;
+}
+
+.text-gray-400 {
+  color: var(--text-color-tertiary) !important;
+}
+
+.border-gray-200, .border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+/* Dashboard stat cards */
+.bg-green-50 {
+  background-color: var(--stat-card-green) !important;
+}
+
+.bg-yellow-50 {
+  background-color: var(--stat-card-yellow) !important;
+}
+
+.bg-purple-50 {
+  background-color: var(--stat-card-purple) !important;
+}
+
+.bg-blue-50 {
+  background-color: var(--stat-card-blue) !important;
+}
+
+.text-green-800 {
+  color: var(--stat-text-green) !important;
+}
+
+.text-yellow-800 {
+  color: var(--stat-text-yellow) !important;
+}
+
+.text-purple-800 {
+  color: var(--stat-text-purple) !important;
+}
+
+.text-blue-800 {
+  color: var(--stat-text-blue) !important;
+}
+
+input, select, textarea {
+  background-color: var(--input-background) !important;
+  color: var(--input-text) !important;
+  border-color: var(--border-color) !important;
+}
+
+::placeholder {
+  color: var(--input-placeholder) !important;
+}
+
+/* Maintain white buttons */
+button.bg-white:not(.hover\:bg-gray-50) {
+  background-color: var(--card-background) !important;
+}
+
+/* Primary colors should remain consistent */
+.text-primary, .border-primary, .ring-primary, .focus\:ring-primary, .focus\:border-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  --tw-ring-color: var(--primary) !important;
+}
+
+.bg-primary, .hover\:bg-primary {
+  background-color: var(--primary) !important;
+}
+
+/* Improved contrast for sidebar */
+.dark-theme [class*="sidebar"],
+.dark-theme [class*="Sidebar"] {
+  background-color: #0f172a !important;
+}
+
+.light-theme [class*="sidebar"],
+.light-theme [class*="Sidebar"] {
+  background-color: #f8fafc !important;
+}
+
+/* Enhance text in dark mode */
+.dark-theme {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle highlight to active items in dark mode */
+.dark-theme .active,
+.dark-theme [aria-current="page"] {
+  background-color: rgba(99, 102, 241, 0.1) !important;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.2) !important;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-4 rounded-md hover:bg-opacity-90 transition-all;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+  
+  .input-field {
+    @apply block w-full shadow-sm rounded-md border-gray-300 focus:ring-primary focus:border-primary sm:text-sm p-2 border;
+  }
+}
+
+@keyframes notification-slide-in {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes notification-slide-out {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-notification-slide-in {
+  animation: notification-slide-in 0.3s ease-out forwards;
+}
+
+.animate-notification-slide-out {
+  animation: notification-slide-out 0.3s ease-in forwards;
+}
+
+/* Sidebar specific styles */
+.sidebar-container {
+  background-color: var(--card-background);
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-username {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.sidebar-role {
+  color: var(--text-color-secondary);
+}
+
+.sidebar-item {
+  color: var(--text-color-secondary);
+}
+
+.sidebar-item:hover {
+  background-color: var(--highlight-bg);
+  color: var(--text-color);
+}
+
+.sidebar-active-item {
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-icon {
+  color: var(--text-color-secondary);
+}
+
+.sidebar-item:hover .sidebar-icon {
+  color: var(--text-color);
+}
+
+.sidebar-text {
+  font-weight: 500;
+}
+
+/* Dashboard card styles */
+.dashboard-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px var(--shadow-color);
+  border-radius: 0.5rem;
+}
+
+.dashboard-card-title {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.dashboard-card-value {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.dashboard-card-subtitle {
+  color: var(--text-color-secondary);
+  font-size: 0.875rem;
+}
+
+/* Header styles */
+.header-container {
+  background-color: var(--card-background);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.header-logo {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+.dropdown-username {
+  color: var(--text-color);
+}
+
+.dropdown-email {
+  color: var(--text-color-secondary);
+}
+
+.dropdown-item {
+  color: var(--text-color);
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: var(--highlight-bg);
+}
+
+.dropdown-icon {
+  color: var(--text-color-secondary);
+}
+
+/* Dashboard styles */
+.dashboard-title {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-welcome {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Make stat cards more visible */
+.upcoming-classes {
+  background-color: var(--stat-card-green) !important;
+}
+
+.pending-reviews {
+  background-color: var(--stat-card-yellow) !important;
+}
+
+.pending-submissions {
+  background-color: var(--stat-card-purple) !important;
+}
+
+.teacher-activity {
+  background-color: var(--stat-card-green) !important;
+}
+
+.pending-approvals {
+  background-color: var(--stat-card-purple) !important;
+}
+
+.system-status {
+  background-color: var(--stat-card-blue) !important;
+}
+
+/* Make text in stat cards more visible */
+.upcoming-classes h3,
+.pending-reviews h3,
+.pending-submissions h3,
+.teacher-activity h3,
+.pending-approvals h3,
+.system-status h3 {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+}
+
+.upcoming-classes p,
+.pending-reviews p,
+.pending-submissions p,
+.teacher-activity p,
+.pending-approvals p,
+.system-status p {
+  color: var(--text-color-secondary) !important;
+  font-weight: 500 !important;
+}
+
+/* Resources section */
+.resources-title {
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.resource-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.resource-card:hover {
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transform: translateY(-2px);
+}
+
+.resource-title {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.resource-subject {
+  color: var(--text-color-secondary);
+}
+
+.resource-type {
+  background-color: var(--highlight-bg);
+  color: var(--text-color-secondary);
+  font-weight: 500;
+}
+
+/* Theme settings styles */
+.theme-option {
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.light-theme .theme-option, .dark-theme .theme-option {
+  border-width: 2px;
+  border-style: solid;
+}
+
+/* Light theme specific styles for theme options */
+.light-theme .light-option {
+  background-color: #f8fafc;
+  border-color: #e5e7eb;
+}
+
+.light-theme .light-option:hover {
+  background-color: #f0f9ff;
+  border-color: #bfdbfe;
+}
+
+.light-theme .dark-option {
+  background-color: #f1f5f9;
+  border-color: #e5e7eb;
+}
+
+.light-theme .dark-option:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.light-theme .system-option {
+  background-color: #f8fafc;
+  border-color: #e5e7eb;
+}
+
+.light-theme .system-option:hover {
+  background-color: #f0f9ff;
+  border-color: #93c5fd;
+}
+
+/* Dark theme specific styles for theme options */
+.dark-theme .light-option {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark-theme .light-option:hover {
+  background-color: #1e293b;
+  border-color: #fcd34d;
+}
+
+.dark-theme .dark-option {
+  background-color: #0f172a;
+  border-color: #334155;
+}
+
+.dark-theme .dark-option:hover {
+  background-color: #0f172a;
+  border-color: #818cf8;
+}
+
+.dark-theme .system-option {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+.dark-theme .system-option:hover {
+  background-color: #1e293b;
+  border-color: #60a5fa;
+}
+
+/* Selected theme indicator */
+.light-theme input[type="radio"]:checked + .theme-label {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.dark-theme input[type="radio"]:checked + .theme-label {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+/* Theme labels */
+.light-theme .theme-label {
+  color: #1f2937;
+}
+
+.light-theme .theme-description {
+  color: #64748b;
+}
+
+.dark-theme .theme-label {
+  color: #e2e8f0;
+}
+
+.dark-theme .theme-description {
+  color: #94a3b8;
+}
+
+/* Selected theme options */
+.light-theme .light-option input[type="radio"]:checked ~ * {
+  background-color: rgba(96, 165, 250, 0.1);
+  border-color: #3b82f6;
+}
+
+.light-theme .dark-option input[type="radio"]:checked ~ * {
+  background-color: rgba(99, 102, 241, 0.1);
+  border-color: #6366f1;
+}
+
+.light-theme .system-option input[type="radio"]:checked ~ * {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: #2563eb;
+}
+
+.dark-theme .light-option input[type="radio"]:checked ~ * {
+  background-color: rgba(250, 204, 21, 0.1);
+  border-color: #facc15;
+}
+
+.dark-theme .dark-option input[type="radio"]:checked ~ * {
+  background-color: rgba(129, 140, 248, 0.1);
+  border-color: #818cf8;
+}
+
+.dark-theme .system-option input[type="radio"]:checked ~ * {
+  background-color: rgba(96, 165, 250, 0.1);
+  border-color: #60a5fa;
+}
+
+/* Font size selection */
+.font-size-option {
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.light-theme .font-size-option {
+  background-color: #f8fafc;
+}
+
+.dark-theme .font-size-option {
+  background-color: #1e293b;
+}
+
+.font-size-option:hover {
+  border-color: var(--primary);
+}
+
+.font-size-preview {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-color);
+}
+
+.small-text .font-size-preview {
+  font-size: 0.875rem;
+}
+
+.medium-text .font-size-preview {
+  font-size: 1rem;
+}
+
+.large-text .font-size-preview {
+  font-size: 1.125rem;
+}
+
+/* Selected option styling */
+.selected-option {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.light-theme .selected-option {
+  background-color: rgba(94, 72, 232, 0.05);
+}
+
+.dark-theme .selected-option {
+  background-color: rgba(94, 72, 232, 0.1);
+}
+
+/* Layout option styles */
+.layout-option {
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 2px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.light-theme .layout-option {
+  background-color: #f8fafc;
+}
+
+.dark-theme .layout-option {
+  background-color: #1e293b;
+}
+
+.layout-option:hover {
+  border-color: var(--primary);
+}
+
+.layout-preview {
+  height: 100px;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  padding: 0.5rem;
+}
+
+/* Grid preview */
+.grid-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.grid-preview .preview-item {
+  background-color: var(--primary);
+  opacity: 0.3;
+  border-radius: 0.25rem;
+  height: 100%;
+}
+
+/* List preview */
+.list-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-preview .preview-item {
+  background-color: var(--primary);
+  opacity: 0.3;
+  border-radius: 0.25rem;
+  height: 20px;
+  width: 100%;
+}
+
+/* Checkbox styling for better visibility */
+.light-theme input[type="checkbox"] {
+  border: 2px solid #d1d5db;
+}
+
+.dark-theme input[type="checkbox"] {
+  border: 2px solid #4b5563;
+}
+
+.light-theme input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.dark-theme input[type="checkbox"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Radio button styling */
+.light-theme input[type="radio"] {
+  border: 2px solid #d1d5db;
+}
+
+.dark-theme input[type="radio"] {
+  border: 2px solid #4b5563;
+}
+
+.light-theme input[type="radio"]:checked,
+.dark-theme input[type="radio"]:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Badge/tag styles in dark mode - improving contrast */
+.dark-theme .bg-green-100 {
+  background-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.dark-theme .bg-yellow-100 {
+  background-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+.dark-theme .bg-purple-100 {
+  background-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.dark-theme .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.dark-theme .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.dark-theme .bg-gray-100 {
+  background-color: rgba(107, 114, 128, 0.3) !important;
+}
+
+/* Badge text colors in dark mode - improving contrast */
+.dark-theme .text-green-800 {
+  color: #4ade80 !important;
+}
+
+.dark-theme .text-yellow-800 {
+  color: #fcd34d !important;
+}
+
+.dark-theme .text-purple-800 {
+  color: #c4b5fd !important;
+}
+
+.dark-theme .text-blue-800 {
+  color: #93c5fd !important;
+}
+
+.dark-theme .text-red-800 {
+  color: #fca5a5 !important;
+}
+
+.dark-theme .text-gray-800 {
+  color: #f1f5f9 !important;
+}
+
+/* Table visibility in dark mode */
+.dark-theme table th {
+  color: var(--text-color) !important;
+  font-weight: 600;
+}
+
+.dark-theme table tr {
+  border-color: var(--border-color) !important;
+}
+
+.dark-theme table td {
+  color: var(--text-color-secondary) !important;
+}
+
+/* Improve button visibility in dark mode */
+.dark-theme button.bg-white,
+.dark-theme .bg-white {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important;
+}
+
+.dark-theme button.hover\:bg-gray-50:hover {
+  background-color: #334155 !important;
+}
+
+.dark-theme button.text-gray-700,
+.dark-theme .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+/* Fix dashboard cards for dark mode */
+.dark-theme .dashboard-card {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+/* Fix common text colors */
+.dark-theme .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+.dark-theme .text-gray-500 {
+  color: #cbd5e1 !important;
+}
+
+.dark-theme .text-gray-600 {
+  color: #e2e8f0 !important;
+}
+
+.dark-theme .text-gray-900 {
+  color: #ffffff !important;
+}
+
+/* Modal and dialog improvements */
+.dark-theme [role="dialog"],
+.dark-theme .modal {
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Improve input visibility in dark mode */
+.dark-theme input[type="text"],
+.dark-theme input[type="email"],
+.dark-theme input[type="password"],
+.dark-theme input[type="number"],
+.dark-theme input[type="date"],
+.dark-theme input[type="search"],
+.dark-theme select,
+.dark-theme textarea {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: #475569 !important;
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus,
+.dark-theme textarea:focus {
+  --tw-ring-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Fix border colors */
+.dark-theme .border,
+.dark-theme .border-gray-200,
+.dark-theme .border-gray-300 {
+  border-color: #334155 !important;
+}
+
+/* Better resource card visibility */
+.dark-theme .resource-card,
+.dark-theme .lesson-card {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+.dark-theme .resource-card .text-gray-900,
+.dark-theme .lesson-card .text-gray-900 {
+  color: #ffffff !important;
+}
+
+.dark-theme .resource-card .text-gray-500,
+.dark-theme .lesson-card .text-gray-500 {
+  color: #cbd5e1 !important;
+}
+
+/* Better hover states for list items */
+.dark-theme .hover\:bg-gray-50:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Improved shadows for cards in dark mode */
+.dark-theme .shadow,
+.dark-theme .shadow-md,
+.dark-theme .shadow-lg {
+  --tw-shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Improve tag/badge contrast in both themes */
+.bg-purple-100, .bg-indigo-100, .bg-violet-100 {
+  background-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+.text-purple-800, .text-indigo-800, .text-violet-800 {
+  color: #6d28d9 !important;
+}
+
+.dark-theme .text-purple-800, 
+.dark-theme .text-indigo-800, 
+.dark-theme .text-violet-800 {
+  color: #c4b5fd !important;
+}
+
+/* Specifically target the interactive tag shown in the screenshot */
+.badge.interactive, .tag.interactive {
+  background-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.light-theme .badge.interactive, .light-theme .tag.interactive {
+  color: #5b21b6 !important;
+}
+
+.dark-theme .badge.interactive, .dark-theme .tag.interactive {
+  color: #c4b5fd !important;
+}
+
+/* Images tag */
+.badge.images, .tag.images {
+  background-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.light-theme .badge.images, .light-theme .tag.images {
+  color: #065f46 !important;
+}
+
+.dark-theme .badge.images, .dark-theme .tag.images {
+  color: #4ade80 !important;
+}
+
+/* Fix for task cards with purple backgrounds */
+.my-tasks {
+  background-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+.light-theme .my-tasks {
+  color: #5b21b6 !important;
+}
+
+.dark-theme .my-tasks {
+  color: #c4b5fd !important;
+}
+
+.light-theme .my-tasks p, .light-theme .my-tasks span {
+  color: #6d28d9 !important;
+}
+
+.dark-theme .my-tasks p, .dark-theme .my-tasks span {
+  color: #ddd6fe !important;
+}
+
+/* Fix for system status cards */
+.system-status {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.light-theme .system-status {
+  color: #1e40af !important;
+}
+
+.dark-theme .system-status {
+  color: #93c5fd !important;
+}
+
+.light-theme .system-status p, .light-theme .system-status span {
+  color: #1e3a8a !important;
+}
+
+.dark-theme .system-status p, .dark-theme .system-status span {
+  color: #bfdbfe !important;
+}
+
+/* Improve visibility of resource cards */
+.resource-card .resource-title,
+.resource-card .resource-subject,
+.resource-card h3 {
+  font-weight: 600;
+}
+
+.dark-theme .resource-card .resource-title,
+.dark-theme .resource-card h3 {
+  color: #f8fafc !important;
+}
+
+.dark-theme .resource-card .resource-subject {
+  color: #e2e8f0 !important;
+}
+
+/* Improve bookmark icon contrast */
+.dark-theme svg[aria-label="bookmark"],
+.dark-theme svg[aria-label="bookmarked"] {
+  color: #93c5fd !important;
+}
+
+/* Specific styles for badges/tags in light and dark themes */
+.badge, .tag {
+  @apply font-medium rounded-full px-2.5 py-0.5;
+}
+
+.light-theme .badge, .light-theme .tag {
+  @apply bg-opacity-20 font-semibold;
+}
+
+.dark-theme .badge, .dark-theme .tag {
+  @apply bg-opacity-30 font-semibold;
+}
+
+/* Fix for the purple interactive badge shown in the screenshot */
+span.interactive, .interactive {
+  background-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+.light-theme span.interactive, .light-theme .interactive {
+  color: #5b21b6 !important;
+}
+
+.dark-theme span.interactive, .dark-theme .interactive {
+  color: #c4b5fd !important;
+}
+
+/* Fix for images tag */
+span.images, .images {
+  background-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.light-theme span.images, .light-theme .images {
+  color: #065f46 !important;
+}
+
+.dark-theme span.images, .dark-theme .images {
+  color: #4ade80 !important;
+}
+
+/* Additional fixes for New Lesson Plan button with broader compatibility */
+a.btn-new-lesson,
+button.btn-new-lesson,
+.btn-primary, 
+.btn-purple,
+.btn-indigo,
+.btn-blue,
+a[href].new-lesson,
+button.new-lesson, 
+a[href] span:not(.hidden):not(.sr-only) {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Target buttons by their background classes */
+.bg-primary,
+.bg-blue-500, .bg-blue-600, .bg-blue-700, 
+.bg-purple-500, .bg-purple-600, .bg-purple-700,
+.bg-indigo-500, .bg-indigo-600, .bg-indigo-700 {
+  color: white !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure all buttons with blue backgrounds have white text */
+button.bg-blue-500,
+button.bg-blue-600,
+button.bg-blue-700,
+button.bg-purple-500,
+button.bg-purple-600,
+button.bg-purple-700,
+button.bg-indigo-500,
+button.bg-indigo-600,
+button.bg-indigo-700,
+button.bg-primary {
+  color: white !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Specific New Lesson Plan button styles */
+.new-lesson-plan-button,
+[class*="new-lesson"],
+[class*="newLesson"] {
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* General button text visibility improvements */
+.btn, 
+button, 
+[role="button"],
+a[href].btn {
+  font-weight: 500;
+}
+
+/* Ensure colored buttons always have visible text */
+.bg-blue-500, .bg-blue-600, .bg-blue-700,
+.bg-indigo-500, .bg-indigo-600, .bg-indigo-700,
+.bg-purple-500, .bg-purple-600, .bg-purple-700,
+.bg-primary {
+  color: white !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* More specific selectors for New Lesson Plan button */
+[class*="new-lesson-plan"],
+[class*="newLessonPlan"],
+button:has(> span:contains("New Lesson Plan")),
+a:has(> span:contains("New Lesson Plan")),
+a:has(> div > span:contains("New Lesson Plan")),
+button:has(> div > span:contains("New Lesson Plan")),
+.btn-primary span,
+.bg-primary span,
+.bg-blue-600 span,
+.bg-indigo-600 span,
+.bg-purple-600 span,
+button.bg-blue-600 span,
+button.bg-indigo-600 span,
+button.bg-purple-600 span,
+button.bg-primary span {
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Ensure all text in purple/blue buttons is white */
+.bg-indigo-500 *, .bg-indigo-600 *, .bg-indigo-700 *,
+.bg-blue-500 *, .bg-blue-600 *, .bg-blue-700 *,
+.bg-purple-500 *, .bg-purple-600 *, .bg-purple-700 *,
+.bg-violet-500 *, .bg-violet-600 *, .bg-violet-700 *,
+.bg-primary * {
+  color: white !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Specifically target buttons with "New Lesson Plan" text */
+.new-lesson-plan,
+button.new-lesson-plan,
+a.new-lesson-plan,
+*[class*="new-lesson-plan"],
+*[class*="newLessonPlan"] {
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Improve visibility of text in colored buttons */
+.bg-primary,
+.bg-blue-500, .bg-blue-600, .bg-blue-700, 
+.bg-indigo-500, .bg-indigo-600, .bg-indigo-700,
+.bg-purple-500, .bg-purple-600, .bg-purple-700,
+.bg-violet-500, .bg-violet-600, .bg-violet-700 {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+} 
